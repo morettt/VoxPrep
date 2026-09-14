@@ -12,9 +12,9 @@ from pathlib import Path
 import numpy as np
 import torch
 import imageio_ffmpeg
+from silero_vad import VADIterator, load_silero_vad
 
 
-VAD_ROOT = Path(r"D:\肥6\full-hub\asr-hub\model\torch_hub\snakers4_silero-vad_master")
 FFMPEG = Path(imageio_ffmpeg.get_ffmpeg_exe())
 SAMPLE_RATE = 16000
 FRAME_SAMPLES = 512
@@ -45,16 +45,7 @@ def audio_duration(path: Path) -> float:
 
 
 def load_vad():
-    loaded = torch.hub.load(
-        repo_or_dir=str(VAD_ROOT),
-        model="silero_vad",
-        force_reload=False,
-        onnx=True,
-        trust_repo=True,
-        source="local",
-    )
-    model, utils = loaded
-    return model, utils[3]
+    return load_silero_vad(onnx=True), VADIterator
 
 
 def detect_speech(source: Path) -> list[tuple[float, float]]:
@@ -237,8 +228,8 @@ def main() -> int:
         if not source.is_file():
             print(f"找不到音频：{source}")
             return 1
-    if not VAD_ROOT.is_dir() or not FFMPEG.is_file():
-        print("找不到指定的本地 VAD 模型或 FFmpeg。")
+    if not FFMPEG.is_file():
+        print("找不到 FFmpeg。")
         return 1
     if args.output:
         output = args.output.expanduser().resolve()

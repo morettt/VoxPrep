@@ -14,7 +14,7 @@ import requests
 
 API_URL = "https://api.siliconflow.cn/v1/audio/transcriptions"
 MODEL = "XingChenAGI/XingChenASR-V3.2-Ultra"
-DEFAULT_API_KEY = "sk-qgtjhgywtbsalsgttrapycrcynojvsnjwrgtvkhdiizfcrpp"
+DEFAULT_API_KEY = ""
 DEFAULT_FOLDER = Path(__file__).resolve().parent / "峰哥" / "1_VAD人声"
 OUTPUT_NAME = "转写结果.txt"
 AUDIO_SUFFIXES = {".mp3", ".m4a", ".wav", ".flac", ".aac", ".ogg", ".opus"}

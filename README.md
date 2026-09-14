@@ -1,6 +1,3 @@
-# VoxPrep
-web操作。一键化下载网页视频转音频。asr转录+提取人声。整理成可直接训练的tts数据集
-
 # B站视频数据集自动处理
 
 ## WebUI
@@ -77,9 +74,9 @@ uv run python siliconflow_asr.py "任务目录\VAD人声"
 ## 运行环境
 
 - 所有 Python 程序都使用本项目由 `uv` 管理的 `.venv`。
-- Silero VAD 使用 `D:\肥6` 中已有的本地模型。
+- Silero VAD 由 `uv` 自动安装，项目不依赖电脑上的外部模型目录。
 - FFmpeg 由项目依赖 `imageio-ffmpeg` 提供。
-- ASR 使用 `SILICONFLOW_API_KEY` 环境变量；未设置时沿用现有 ASR 脚本中的本地配置。
+- ASR 使用 `SILICONFLOW_API_KEY` 环境变量，源码不保存 API Key。
 
 安装下载阶段依赖：
 

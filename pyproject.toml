@@ -1,0 +1,20 @@
+[project]
+name = "bilibili-dataset-system"
+version = "0.1.0"
+description = "Bilibili audio download, VAD splitting and ASR WebUI"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "imageio-ffmpeg>=0.6.0",
+    "numpy>=2.0.0",
+    "onnxruntime>=1.20.0",
+    "requests>=2.32.0",
+    "torch>=2.6.0",
+    "torchaudio>=2.6.0",
+    "uvicorn>=0.30.0",
+    "yt-dlp>=2026.8.19",
+]
+
+[tool.uv]
+package = false
+cache-dir = ".uv-cache"

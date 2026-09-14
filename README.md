@@ -76,7 +76,7 @@ uv run python siliconflow_asr.py "任务目录\VAD人声"
 - 所有 Python 程序都使用本项目由 `uv` 管理的 `.venv`。
 - Silero VAD 由 `uv` 自动安装，项目不依赖电脑上的外部模型目录。
 - FFmpeg 由项目依赖 `imageio-ffmpeg` 提供。
-- ASR 使用 `SILICONFLOW_API_KEY` 环境变量，源码不保存 API Key。
+- ASR 已内置 SiliconFlow API Key，也可以用 `SILICONFLOW_API_KEY` 环境变量覆盖。
 
 安装下载阶段依赖：
 
